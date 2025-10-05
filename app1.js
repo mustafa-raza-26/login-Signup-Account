@@ -16,6 +16,14 @@ function crt() {
         alert("Please fill all fields before creating an account!");
         return;
     }
+        else if (
+        (us.value !== "" && (em.value === "" || ps.value === "")) ||
+        (em.value !== "" && (us.value === "" || ps.value === "")) ||
+        (ps.value !== "" && (us.value === "" || em.value === ""))
+    ) {
+        alert("You have filled only some fields. Please complete all fields....");
+        return;
+    }
 
     let userAlready = false;
     for (let i = 0; i < allUserdata.length; i++) {

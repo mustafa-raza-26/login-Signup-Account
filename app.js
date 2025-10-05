@@ -14,6 +14,11 @@ function login() {
     let passwordLogin = password.value;
     let foundIndex = -1;
 
+    if (emailLogin === "" && passwordLogin === "") {
+        alert("Please fill all fields before login your account!");
+        return;
+    }
+
     for (let i = 0; i < allUserdata.length; i++) {
         if ((emailLogin === allUserdata[i].user || emailLogin === allUserdata[i].email) && passwordLogin === allUserdata[i].pass) {
             console.log('Your data is found');
